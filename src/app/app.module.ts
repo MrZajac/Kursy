@@ -15,6 +15,9 @@ import { LoginComponent } from './views/login/login.component';
 import { CookieService } from 'ng2-cookies';
 import { PostComponent } from './views/home/post/post.component';
 import { MessageComponent } from './views/home/message/message.component';
+import { GoldComponent } from './views/gold/gold.component';
+import { GoldService } from './services/gold-service';
+
 
 const appRoutes: Routes = [
   { path: '',
@@ -25,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [IsLoggedInGuard] },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'gold', component: GoldComponent },
 ];
 
 @NgModule({
@@ -35,13 +39,12 @@ const appRoutes: Routes = [
     ContactComponent,
     LoginComponent,
     PostComponent,
-    MessageComponent
+    MessageComponent,
+    GoldComponent
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+      appRoutes),
     BrowserModule,
     HttpModule,
   ],
@@ -49,7 +52,8 @@ const appRoutes: Routes = [
     IsLoggedInGuard,
     LoginService,
     CookieService,
-    PostService],
+    PostService,
+    GoldService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

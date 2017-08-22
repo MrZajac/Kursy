@@ -1,0 +1,21 @@
+<p>
+  gold works!
+</p>
+<div>
+  <input #goldInput min="1" max="100" type="number">
+  <button (click)="updateTable(goldInput.value)">Submit</button>
+</div>
+<div *ngIf="test">
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Cena</th>
+  </tr>
+  <tr *ngFor= "let day of test">
+
+    <td>{{day.data}}</td>
+    <td>{{day.cena}}</td>
+  </tr>
+</table>
+
+</div>

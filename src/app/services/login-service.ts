@@ -16,7 +16,7 @@ export class LoginService {
 
     public login(login: string, password: string): boolean {
         console.log('zaloguj', login, password);
-        if (login === 'Szymon' && password === 'abc') {
+        if (login === 'Michał' && password === 'abc') {
             this.router.navigate(['/home']);
             this.cookieService.set('isUserLoggedIn', 'true');
             return true;
